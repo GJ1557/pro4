@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진식품</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./common.css">
+    <script>
+        $(function () {
+            let login = $('.login')
+            
+            $('.ham').click(function () {
+                $(this).toggleClass('on')
+                $('nav').toggleClass('on')
+                $('nav').append(login)
+            })
+
+            $('.gnb>li>a').click(function (e) {
+                e.preventDefault()
+            })
+
+            $(window).on('load', function () {                
+                if ($(this).width() < 899) {
+                    $('.gnb>li').click(function () {
+                        if ($(this).attr('class') != 'on') {
+                            $('.sub').slideUp()
+                            $(this).find('.sub').slideToggle()
+                            $('.gnb>li').removeClass('on')
+                            $(this).addClass('on')
+                        } else {
+                            $(this).find('.sub').slideToggle()
+                            $('.gnb>li').removeClass('on')
+                        }
+                    })
+                }
+
+            })
+
+            $(window).on('resize', function () {
+                if ($(this).width() < 899) {
+                    $('.gnb>li').click(function () {
+                        if ($(this).attr('class') != 'on') {
+                            $('.sub').slideUp()
+                            $(this).find('.sub').slideToggle()
+                            $('.gnb>li').removeClass('on')
+                            $(this).addClass('on')
+                        } else {
+                            $(this).find('.sub').slideToggle()
+                            $('.gnb>li').removeClass('on')
+                        }
+                    })
+                } else {
+                    location.reload();
+                }
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="main_wrap">
+        <!-- header -->
+        <header class="hd">
+            <h1 class="logo"><img src="./img/logo.png" alt="로고"></h1>
+            <nav>
+                <ul class="gnb">
+                    <li>
+                        <span>제품소개</span>
+                        <ul class="sub">
+                            <li><a href="#">자연은 과일주스</a></li>
+                            <li><a href="#">신제품</a></li>
+                            <li><a href="#">전체 브랜드</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>커뮤니티</span>
+                        <ul class="sub">
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">맛있는 SNS</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>기업소개</span>
+                        <ul class="sub">
+                            <li><a href="#">웅진식품</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">홍보센터</a></li>
+                            <li><a href="#">대영식품</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Contact</span>
+                        <ul class="sub">
+                            <li><a href="#">WOW</a></li>
+                            <li><a href="#">e-Shop</a></li>
+                            <li><a href="#">채용</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="login">
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
+            <div class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        <!-- header -->
+        <!-- section 1 -->
+        <section class="sec1">
+            <div class="swiper mySwiper">
+                <ul class="swiper-wrapper slide">
+                    <li class="swiper-slide">
+                        <h2 id="slide1_h2">
+                            <p>우리 땅</p>
+                            <p>우리 곡물</p>
+                            <p>우리 음료</p>
+                        </h2>
+                        <div><img src="./img/mainbori2.jpg" alt=""></div>
+                    </li>
+                    <li class="swiper-slide">
+                        <h2 id="slide2_h2">
+                            <p>자연의</p>
+                            <p>건강함을</p>
+                            <p>제공합니다</p>
+                        </h2>
+                        <div><img src="./img/mainnature.jpg" alt=""></div>
+                    </li>
+                    <li class="swiper-slide">
+                        <h2 id="slide3_h2">
+                            <p>가장 맛있게</p>
+                            <p>가장 건강하게</p>
+                            <p>온 가족이 함께</p>
+                        </h2>
+                        <div><img src="./img/mainnature3.jpg" alt=""></div>
+                    </li>
+                </ul>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <!-- section 1 -->
+        <!-- section 2 -->
+        <section class="sec2 inner">
+            <h2 class="h2">Product</h2>
+            <ul>
+                <li>
+                    <div><img src="./img/juice.jpg" alt="주스"></div>
+                    <span>주스</span>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <div><img src="./img/tea.jpg" alt="차"></div>
+                    <span>차</span>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <div><img src="./img/grain.jpg" alt="곡물"></div>
+                    <span>곡물</span>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <div><img src="./img/child.jpg" alt="유기농(어린이)"></div>
+                    <span>유기농(어린이)</span>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <div><img src="./img/soda.jpg" alt="생수/탄산/이온"></div>
+                    <span>생수/탄산/이온</span>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <div><img src="./img/health.jpg" alt="홍삼/건강/드링크"></div>
+                    <span>홍삼/건강/드링크</span>
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </section>
+        <!-- section 2 -->
+        <!-- section 3 -->
+        <section class="sec3 inner">
+            <h2 class="h2">Brand</h2>
+            <div class="swiper2 mySwiper2">
+                <ul class="swiper-wrapper sec3_slide">
+                    <li class="swiper-slide" id="sec3_1">
+                        <h3>
+                            <p>맛있는 즐거움</p>
+                            자연은
+                        </h3>
+                        <div><img src="./img/sec3_nature.jpg" alt="자연은"></div>
+                    </li>
+                    <li class="swiper-slide" id="sec3_2">
+                        <h3>
+                            <p>언제 어디서나<br>마음까지 시원하게</p>
+                            하늘보리
+                        </h3>
+                        <div><img src="./img/sec3_bori.jpg" alt="하늘보리"></div>
+                    </li>
+                    <li class="swiper-slide" id="sec3_3">
+                        <h3>
+                            <p>바쁜 아침, 햇살 한 잔</p>
+                            아침햇살
+                        </h3>
+                        <div><img src="./img/sec3_sunrice.jpg" alt="아침햇살"></div>
+                    </li>
+                    <li class="swiper-slide" id="sec3_4">
+                        <h3>
+                            <p>0Kcal로 즐기는<br>폭포수의 짜릿함</p>
+                            빅토리아 탄산수
+                        </h3>
+                        <div><img src="./img/sec3_victoria.jpg" alt="빅토리아"></div>
+                    </li>
+                </ul>
+                <div class="swiper-pagination2"></div>
+            </div>
+        </section>
+        <!-- section 3 -->
+        <!-- section 4 -->
+        <section class="sec4 inner">
+            <h2 class="h2">Contact</h2>
+            <ul>
+                <li>
+                    <p>
+                        <strong>W</strong>oogjin
+                        <strong>O</strong>pen
+                        <strong>W</strong>eb<br>
+                        plafform<br>
+                        웅진식품이 듣습니다.</p>
+                    <a href="#">제안하기</a>
+                    <div><img src="./img/sec4_wow_main.jpg" alt="WOW"></div>
+                </li>
+                <li>
+                    <p>쿠폰, 포인트, VVIP 혜택까지<br>모두 챙겨가세요 !!!</p>
+                    <a href="#">햇살 e-Shop</a>
+                    <div><img src="./img/sec4_e-shop.jpg" alt="e-Shop"></div>
+                </li>
+                <li>
+                    <p>웅진식품은 지금<br>2022 인재 영입 중!</p>
+                    <a href="#">지원하기</a>
+                    <div><img src="./img/sec4_recruit.jpg" alt="채용"></div>
+                </li>
+            </ul>
+        </section>
+        <!-- section 4 -->
+        <!-- section 5 -->
+        <section class="sec5 inner">
+            <h2 class="h2">SNS</h2>
+            <ul>
+                <li>
+                    <div class="imgcon"><img src="./img/SNS_blog.jpg" alt="블로그"></div>
+                    <div class="txtcon">
+                        <p>[SNS 이벤트] 샤인머스켓 좋아하는 샤돌이들 주목!</p>
+                        <span>2022-06-23</span>
+                        <h3>W진이의 맛있는<strong>Story</strong></h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="imgcon"><img src="./img/SNS_youtube,.jpg" alt="유튜브"></div>
+                    <div class="txtcon">
+                        <p>[메이킹] 2022년 하늘보리 X 최우식 메이킹 영상 공개!</p>
+                        <span>2022-06-21</span>
+                        <h3>W진이의 즐거운<strong>Youtube</strong></h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="imgcon"><img src="./img/SNS_insta.jpg" alt="인스타그램"></div>
+                    <div class="txtcon">
+                        <p>자연은 알로에 허브 아이스바 레시피 따라하면서 시원한 여름나기 보내보는 건 어떨까요</p>
+                        <span>2022-06-21</span>
+                        <h3>W진이의 맛있는<strong>Instagram</strong></h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="imgcon"><img src="./img/SNS_facebook.jpg" alt="페이스북"></div>
+                    <div class="txtcon">
+                        <p>#EVENT 각자의 취향은 다 다르니까새로운 짜릿함을 원하는 널 위해 JUNE비했어!</p>
+                        <span>2022-06-21</span>
+                        <h3>W진이의 즐거운<strong>Facebook</strong></h3>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- section 5 -->
+        <!-- footer -->
+        <footer class="ft">
+            <div class="inner">
+                <div class="ftlogo">
+                    <h2><img src="./img/logo.png" alt="푸터 로고"></h2>
+                </div>
+                <div class="ft_txt">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">이메일주소무단수집거부</a>
+                    <a href="#">사이트맵</a>
+                    <a href="#">고객문의</a><br>
+                    <span>대표번호&nbsp</span>
+                    <p>: 02-3668-9114</p>
+                    <span>고객센터&nbsp</span>
+                    <p>: 080-766-6543</p><br>
+                    <p>Copyright 2022 WOONGJIN FOODS CO., LTD All Right Reserved.</p>
+                </div>
+                <div class="fam">
+                    <a href="#">Language</a>
+                    <a href="#">Family Site</a>
+                </div>
+            </div>
+            <!-- Swiper JS -->
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                })
+
+                var ww = $(window).width();
+                var mySwiper2 = undefined;
+
+                function initSwiper() {
+                    
+                    if (ww < 500 && mySwiper2 == undefined) {
+                        mySwiper2 = new Swiper(".mySwiper2", {
+                          slidesPerView: 1,
+                          spaceBetween: 30,
+                          loop: true,
+                          pagination: {
+                            el: ".swiper-pagination2",
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: ".swiper-button-next2",
+                            prevEl: ".swiper-button-prev2",
+                        },
+                    })
+                      } else if (ww >= 500 && mySwiper2 != undefined) {
+                        mySwiper2.destroy()
+                        mySwiper2 = undefined
+                      }
+                    }
+
+                    initSwiper()
+
+                    $(window).on('resize', function () {
+                      ww = $(window).width()
+                      initSwiper()
+                    })
+                
+            </script>
+        </footer>
+        <!-- footer -->
+    </div>
+</body>
+
+</html>
